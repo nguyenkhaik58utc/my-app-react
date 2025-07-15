@@ -1,12 +1,11 @@
-import { Routes, Route } from 'react-router-dom';
-import AdminRoutes from './routes/AdminRoutes';
-import UserRoutes from './routes/UserRoutes';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import LoginRoutes from './routes/LoginRoutes';
 
 function App() {
   return (
     <Routes>
-      {UserRoutes}
-      {AdminRoutes}
+      <Route path="/*" element={<LoginRoutes />} />
+      <Route path="/" element={<Navigate to="/login" replace />} />
     </Routes>
   );
 }
